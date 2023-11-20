@@ -1,0 +1,47 @@
+[
+    {
+        "option_1": "invisible",
+        "option_2": "swim",
+        "children": true,
+        "votes_1": 8,
+        "votes_2": 1,
+        "likes": 5,
+        "dislikes": 4
+    },
+    {
+        "option_1": "skf",
+        "option_2": "kge",
+        "children": false,
+        "votes_1": 1,
+        "votes_2": 4,
+        "likes": 3,
+        "dislikes": 2
+    },
+    {
+        "option_1": "dsfk",
+        "option_2": "adsfk",
+        "children": true,
+        "votes_1": 2,
+        "votes_2": 1,
+        "likes": 1,
+        "dislikes": 2
+    },
+    {
+        "option_1": "dsklfj",
+        "option_2": "n",
+        "children": false,
+        "votes_1": 2,
+        "votes_2": 2,
+        "likes": 4,
+        "dislikes": 0
+    },
+    {
+        "option_1": "Be able to fly",
+        "option_2": "Be able to be invisible",
+        "children": true,
+        "votes_1": 0,
+        "votes_2": 1,
+        "likes": 1,
+        "dislikes": 0
+    }
+]

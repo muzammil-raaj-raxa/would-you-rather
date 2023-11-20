@@ -1,0 +1,124 @@
+
+# Function to load questions from the data file
+function load_questions():
+    try:
+        open data.txt in read mode
+        parse JSON data from the file and store it in 'data' variable
+        close the file
+    except FileNotFound or JSONDecodeError:
+        initialize 'data' as an empty list
+    return 'data'
+
+# Function to save questions to the data file
+function save_questions(questions):
+    open data.txt in write mode
+    convert 'questions' to JSON format
+    write the JSON data to the file
+    close the file
+
+# Function to add a new question
+function add_question(questions):
+    input 'option1' from the user
+    input 'option2' from the user
+    input 'is_child_friendly' (Y/N) from the user
+
+    create a new question dictionary with the following keys and values:
+    - "option_1": option1
+    - "option_2": option2
+    - "children": is_child_friendly
+    - "votes_1": 0
+    - "votes_2": 0
+    - "likes": 0
+    - "dislikes": 0
+
+    append the new question to 'questions'
+    save_questions(questions)
+    print "Question added."
+
+# Function to list all questions
+function list_questions(questions):
+    if 'questions' is empty:
+        print "No questions saved."
+    else:
+        print "List of questions"
+        for each question in 'questions':
+            print question details (option1, option2)
+
+# Function to delete a question
+function delete_question(questions, question_number):
+    if 'question_number' is a valid index in 'questions':
+        remove the question at 'question_number' from 'questions'
+        save_questions(questions)
+        print "Question deleted."
+    else:
+        print "Invalid question number."
+
+# Function for input validation
+function input_something(prompt):
+    repeat until a non-empty value is entered:
+        input 'value' from the user
+        if 'value' is not empty:
+            return 'value'
+        else:
+            print "Input cannot be empty. Please try again."
+
+# Function for boolean input validation
+function input_bool(prompt):
+    repeat until a valid input is entered:
+        input 'value' from the user and convert it to lowercase
+        if 'value' is "y" or "n":
+            return True if 'value' is "y" else False
+        else:
+            print "Invalid input. Please enter 'Y' for Yes or 'N' for No."
+
+# Function for integer input validation
+function input_int(prompt):
+    repeat until a valid integer is entered:
+        input 'value' from the user
+        if 'value' is a valid integer:
+            return 'value'
+        else:
+            print "Invalid input. Please enter a valid integer."
+
+# Function to search questions
+function search_questions(questions, search_term):
+    create an empty list 'results'
+    for each question in 'questions':
+        if 'search_term' exists in question's option_1 or option_2 (case-insensitive):
+            add the question to 'results' along with its index
+
+    return 'results'
+
+# Function to view a question
+function view_question(questions, question_number):
+    if 'question_number' is a valid index in 'questions':
+        retrieve the question at 'question_number'
+        print question details (option1, option2, children, votes, likes, dislikes)
+    else:
+        print "Invalid question number."
+
+# Main program
+if the script is run as the main program:
+    load questions from data.txt and store them in 'questions'
+    print welcome message
+    repeat until the user chooses to quit:
+        prompt the user to choose an action (add, list, search, view, delete, or quit)
+        if the user chooses 'add':
+            call add_question(questions)
+        else if the user chooses 'list':
+            call list_questions(questions)
+        else if the user chooses 'search':
+            input 'search_term' from the user
+            call search_questions(questions, search_term) and print results
+        else if the user chooses 'view':
+            input 'question_number' from the user
+            call view_question(questions, question_number)
+        else if the user chooses 'delete':
+            call list_questions(questions)
+            input 'question_number' from the user
+            call delete_question(questions, question_number)
+        else if the user chooses 'quit':
+            print "Goodbye!" and exit the program
+        else:
+            print "Invalid choice. Please try again."
+

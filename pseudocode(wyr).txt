@@ -1,0 +1,19 @@
+# Function to load questions from the data file
+function load_data():
+    try:
+        open data.txt in read mode
+        parse JSON data from the file and store it in 'data' variable
+        close the file
+    except FileNotFound or JSONDecodeError:
+        show an error messagebox with "Missing/Invalid file" message and return
+
+# Function to ask the user if they are over 12
+function ask_user_age():
+    show a messagebox with "Age Restriction" and "Are you over the age of 12?"
+    store the user's response as a boolean value in 'user_over_12'
+
+# Function to create the main window and GUI
+function create_gui():
+    create a main window
+    center the window on the screen
+    set
